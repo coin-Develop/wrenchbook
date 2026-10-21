@@ -1,0 +1,827 @@
+<!doctype html>
+<!--
+  Wrenchbook privacy policy.
+  Before publishing, confirm:
+    - the App Support link on the Wrenchbook App Store product page is live;
+    - the effective and last-updated dates are correct;
+    - the App Store privacy answers match the summary at the end of this page.
+  This document is a policy template, not legal advice. Have counsel review it for
+  your jurisdiction, business model, and the App Store privacy answers you submit.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Privacy Policy for Wrenchbook. A local-first notes app with no account, no ads, and no tracking.">
+  <title>Wrenchbook Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f4f1e9;
+      --surface: #fffdf8;
+      --surface-2: #ece8dd;
+      --ink: #1c2528;
+      --muted: #5d6a6d;
+      --line: #ded8ca;
+      --accent: #1f6f5c;
+      --accent-soft: #dcece6;
+      --warn: #8a5a16;
+      --warn-soft: #fbf0d8;
+      --shadow: 0 10px 30px rgba(28, 37, 40, .07);
+      --radius: 16px;
+      --max: 880px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1413;
+        --surface: #171e1c;
+        --surface-2: #1e2825;
+        --ink: #e8efeb;
+        --muted: #a7b5af;
+        --line: #2b3733;
+        --accent: #83d6bd;
+        --accent-soft: #17332c;
+        --warn: #efc27a;
+        --warn-soft: #2b2417;
+        --shadow: 0 10px 30px rgba(0, 0, 0, .3);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 500px at 15% -10%, var(--accent-soft), transparent 60%),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    .skip {
+      position: absolute;
+      left: 16px;
+      top: -60px;
+      z-index: 10;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .skip:focus { top: 16px; }
+
+    .wrap {
+      width: min(100% - 40px, var(--max));
+      margin-inline: auto;
+    }
+
+    header.site {
+      padding: 56px 0 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      font-weight: 850;
+    }
+
+    .meta {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .lede {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 26px 0 0;
+    }
+
+    .summary div {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary strong {
+      display: block;
+      font-size: 13px;
+      letter-spacing: .01em;
+    }
+
+    .summary span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    main {
+      padding: 10px 0 40px;
+    }
+
+    .toc {
+      margin: 8px 0 34px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .toc h2 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 22px;
+      counter-reset: toc;
+    }
+
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: flex;
+      gap: 9px;
+      padding: 5px 0;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--accent);
+      font: 700 11px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    section.policy {
+      margin: 0 0 34px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 12px;
+      font-size: clamp(21px, 3vw, 27px);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    h2 .num {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font: 800 12px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: .04em;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    p { margin: 0 0 13px; }
+    ul, ol { margin: 0 0 14px; padding-left: 22px; }
+    li { margin: 5px 0; }
+    li::marker { color: var(--accent); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .note {
+      margin: 18px 0;
+      padding: 14px 16px;
+      background: var(--warn-soft);
+      border-left: 4px solid var(--warn);
+      border-radius: 0 10px 10px 0;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .note strong { color: var(--warn); }
+
+    .callout {
+      margin: 18px 0;
+      padding: 16px 18px;
+      background: var(--accent-soft);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      border-radius: 12px;
+    }
+
+    .callout p:last-child { margin-bottom: 0; }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      min-width: 560px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 11px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      overflow-wrap: anywhere;
+    }
+
+    th:nth-child(1), td:nth-child(1) { width: 22%; }
+    th:nth-child(2), td:nth-child(2) { width: 40%; }
+    th:nth-child(3), td:nth-child(3) { width: 38%; }
+
+    th {
+      background: var(--surface-2);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .yes { color: var(--accent); font-weight: 700; }
+    .no { color: var(--muted); font-weight: 700; }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 30px 0;
+    }
+
+    footer.site {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer.site .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .top {
+      display: inline-block;
+      margin-top: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 720px) {
+      header.site { padding-top: 38px; }
+      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .toc ol { grid-template-columns: 1fr; }
+      .card { padding: 18px; }
+      .wrap { width: min(100% - 28px, var(--max)); }
+    }
+
+    @media (max-width: 620px) {
+      .table-wrap { overflow-x: visible; }
+      table { min-width: 0; font-size: 12.5px; }
+      th, td { padding: 9px 9px; }
+      th:nth-child(1), td:nth-child(1) { width: 25%; }
+      th:nth-child(2), td:nth-child(2) { width: 38%; }
+      th:nth-child(3), td:nth-child(3) { width: 37%; }
+    }
+
+    @media (max-width: 420px) {
+      .summary { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --surface: #fff;
+        --surface-2: #fff;
+        --ink: #000;
+        --muted: #333;
+        --line: #bbb;
+        --accent: #000;
+        --shadow: none;
+      }
+      body { background: #fff; }
+      .toc, .summary { box-shadow: none; }
+      .toc { break-inside: avoid; }
+      a { color: #000; text-decoration: none; }
+      .skip, .top { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site">
+    <div class="wrap">
+      <p class="eyebrow">Privacy Policy for</p>
+      <h1>Wrenchbook</h1>
+      <p class="meta">Effective date: October 20, 2026 · Last updated: October 20, 2026</p>
+      <p class="lede">
+        Wrenchbook is a local-first notes app. Your notes stay on your device. There is no account,
+        no advertising, and no tracking across other apps or websites.
+      </p>
+
+      <div class="summary" aria-label="Privacy at a glance">
+        <div><strong>Local-first</strong><span>Your content stays on your device.</span></div>
+        <div><strong>No account</strong><span>No sign-up, email, or profile.</span></div>
+        <div><strong>No ads or tracking</strong><span>No ad SDKs or cross-app tracking.</span></div>
+        <div><strong>You control deletion</strong><span>Delete notes or uninstall the App.</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <nav class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#short-version">The short version</a></li>
+        <li><a href="#content">Information you create</a></li>
+        <li><a href="#not-collected">Information we do not collect</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#use">How information is used</a></li>
+        <li><a href="#storage">Storage, backups, and retention</a></li>
+        <li><a href="#sharing">Sharing and third parties</a></li>
+        <li><a href="#purchases">Purchases</a></li>
+        <li><a href="#rights">Your choices and rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#international">International users</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#app-store">App Store privacy summary</a></li>
+      </ol>
+    </nav>
+
+    <section class="policy" id="who-we-are">
+      <h2><span class="num">01</span> Who we are</h2>
+      <div class="card">
+        <p>
+          Wrenchbook (the “App”) is provided by the Wrenchbook team (“we”, “us”, or “our”).
+          This policy explains what information the App handles, where it is stored,
+          and the choices you have.
+        </p>
+        <p>
+          For privacy questions or requests, use the <strong>App Support</strong> link on the
+          Wrenchbook App Store product page.
+        </p>
+        <p class="small">
+          This policy applies to the App and any features released under the same
+          name, unless a separate policy is shown for a specific feature.
+        </p>
+      </div>
+    </section>
+
+    <section class="policy" id="short-version">
+      <h2><span class="num">02</span> The short version</h2>
+      <div class="callout">
+        <p>
+          <strong>We do not operate an account system or a server that receives your content.</strong>
+          Wrenchbook stores what you create on your device. We do not sell your information,
+          show advertising, or use third-party analytics or tracking SDKs.
+        </p>
+        <p>
+          Permissions are optional and controlled by iOS. You can delete notes in the App,
+          revoke permissions in iOS Settings, or remove all App data by uninstalling the App.
+        </p>
+      </div>
+      <ul>
+        <li>No account, sign-in, email address, or phone number is required.</li>
+        <li>No advertising identifiers, cross-app tracking, or behavioral profiles.</li>
+        <li>No developer-operated analytics or crash-reporting service in the current version.</li>
+        <li>Your content is used to provide the App’s features, not to build a profile of you.</li>
+      </ul>
+    </section>
+
+    <section class="policy" id="content">
+      <h2><span class="num">03</span> Information you create</h2>
+      <p>
+        Wrenchbook lets you create and store notes, lists, tags, attachments,
+        settings, and photos you choose to add. This content is stored on your
+        device and is not transmitted to us.
+      </p>
+      <ul>
+        <li>
+          <strong>Notes and lists.</strong> Text, checklists, tags, and values you enter are stored
+          in the App’s local database so the App can display, search, organize, and export them.
+        </li>
+        <li>
+          <strong>Photos.</strong> If you attach a photo, the App receives only the item you
+          select through the system photo picker. The photo is stored with your note on
+          your device. The App does not scan your photo library.
+        </li>
+        <li>
+          <strong>Settings.</strong> Preferences such as units, appearance, reminders, and
+          App Lock are stored locally on your device.
+        </li>
+        <li>
+          <strong>Exports and shares.</strong> When you export or share content, iOS passes it
+          to the destination you choose (for example, Files, Mail, or another app). That
+          destination handles the content under its own privacy practices.
+        </li>
+      </ul>
+      <div class="note">
+        <strong>No cloud account.</strong> The current version does not create a developer-hosted
+        copy of your content. If a future version adds optional sync, this policy and the
+        App Store privacy answers will be updated before that feature is enabled.
+      </div>
+    </section>
+
+    <section class="policy" id="not-collected">
+      <h2><span class="num">04</span> Information we do not collect</h2>
+      <p>In the current version, we do not collect or receive:</p>
+      <ul>
+        <li>Your name, email address, phone number, or postal address.</li>
+        <li>Contacts, calendars, or precise location.</li>
+        <li>Advertising identifiers or cross-app/website tracking data.</li>
+        <li>Payment card details (see “Purchases” below).</li>
+        <li>Your notes, attachments, or photos on a developer server.</li>
+      </ul>
+      <p>
+        We do not use third-party advertising, analytics, or tracking SDKs in the current
+        version. Apple may provide crash reports and diagnostics to developers if you have
+        enabled “Share with App Developers” in iOS Settings; we use those reports only to
+        diagnose and fix problems. Apple handles that data under its own privacy policy.
+      </p>
+    </section>
+
+    <section class="policy" id="permissions">
+      <h2><span class="num">05</span> Permissions</h2>
+      <p>
+        The App asks only for permissions needed by a feature you choose to use. You can
+        change or revoke them at any time in iOS Settings → Privacy &amp; Security, or in the
+        App’s settings.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Permission</th><th>Why it is used</th><th>What leaves the device</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Photos</strong></td>
+              <td>To attach a photo to a note you are creating or editing. The system picker gives the App only the item you select.</td>
+              <td>Nothing. The selected image is stored with the note on your device.</td>
+            </tr>
+            <tr>
+              <td><strong>Face ID / Touch ID</strong></td>
+              <td>To unlock the App when App Lock is enabled.</td>
+              <td>Nothing. Biometric data stays with iOS; the App receives only a success or failure result.</td>
+            </tr>
+            <tr>
+              <td><strong>Notifications</strong></td>
+              <td>To show local reminders you schedule. The App does not use a push server for these reminders.</td>
+              <td>Nothing. Reminder content is scheduled locally on your device.</td>
+            </tr>
+            <tr>
+              <td><strong>Camera or microphone</strong></td>
+              <td>Only if a feature you use offers capture. The App asks at the moment you use that feature.</td>
+              <td>Nothing is uploaded by us. Captured content is stored with your note on your device.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">
+        The App does not request permissions it does not need. If you decline a permission,
+        the related feature may be unavailable, but the rest of the App continues to work.
+      </p>
+    </section>
+
+    <section class="policy" id="use">
+      <h2><span class="num">06</span> How information is used</h2>
+      <p>Content you create is used on your device to:</p>
+      <ul>
+        <li>Provide the App’s core features, including writing, organizing, search, and display.</li>
+        <li>Store your preferences and restore them the next time you open the App.</li>
+        <li>Create exports or shares when you ask for them.</li>
+        <li>Show local reminders when you enable them.</li>
+        <li>Protect the App with App Lock when you enable it.</li>
+      </ul>
+      <p>
+        We do not use your content for advertising, profiling, or sale. We do not combine it
+        with data from other apps or websites.
+      </p>
+    </section>
+
+    <section class="policy" id="storage">
+      <h2><span class="num">07</span> Storage, backups, and retention</h2>
+      <p>
+        Your content is stored in the App’s container on your device. It remains there until
+        you delete the content in the App or uninstall the App. Deleting a note removes it
+        from the App’s active database; deleting the App removes its container, subject to
+        the backup behavior described below.
+      </p>
+      <h3>Device backups</h3>
+      <p>
+        If you back up your device to iCloud or a computer, iOS may include App data in that
+        backup according to your backup settings. Those backups are controlled by you and
+        Apple (or your backup software), not by us. A deleted note may remain in an existing
+        backup until that backup is replaced or expires.
+      </p>
+      <h3>No developer copy</h3>
+      <p>
+        We do not maintain a developer-hosted copy of your content in the current version, so
+        there is no separate server retention period to expire. If this changes, we will update
+        this policy and provide the relevant controls before the change takes effect.
+      </p>
+    </section>
+
+    <section class="policy" id="sharing">
+      <h2><span class="num">08</span> Sharing and third parties</h2>
+      <p>
+        We do not sell, rent, or trade your information. We do not share it for cross-context
+        behavioral advertising.
+      </p>
+      <ul>
+        <li>
+          <strong>Apple system services.</strong> The App uses Apple frameworks for storage,
+          photos, notifications, biometrics, and sharing. Apple processes those interactions
+          under its own privacy policy.
+        </li>
+        <li>
+          <strong>App distribution.</strong> If you download the App from the App Store or test
+          it through TestFlight, Apple may collect installation, purchase, and diagnostic data
+          as part of those services.
+        </li>
+        <li>
+          <strong>Your exports.</strong> When you share or export content, the destination you
+          choose receives it. Review that destination’s privacy practices before sharing.
+        </li>
+        <li>
+          <strong>Legal requirements.</strong> Because we do not hold a server copy of your
+          content, we generally cannot produce it. If we receive a valid legal request for
+          information we do hold (for example, support correspondence), we will respond only
+          as required by applicable law and will notify you where lawful.
+        </li>
+      </ul>
+      <p>
+        We do not include third-party advertising, analytics, or tracking SDKs in the current
+        version. If that changes, this section will identify the provider and the purpose
+        before the integration is enabled.
+      </p>
+    </section>
+
+    <section class="policy" id="purchases">
+      <h2><span class="num">09</span> Purchases</h2>
+      <p>
+        If the App offers a paid feature or subscription, the purchase is processed by Apple
+        through the App Store. We do not receive your payment card details. Apple may provide
+        us with a transaction identifier, product identifier, and anonymized sales reports so
+        we can validate the purchase and understand aggregate sales.
+      </p>
+      <p class="small">
+        The current version is free. If purchases are added later, this section and the App
+        Store privacy answers will be updated before they go live.
+      </p>
+    </section>
+
+    <section class="policy" id="rights">
+      <h2><span class="num">10</span> Your choices and rights</h2>
+      <p>You can control your information directly:</p>
+      <ul>
+        <li><strong>Edit or delete notes</strong> in the App at any time.</li>
+        <li><strong>Export</strong> a copy of your content using the App’s export or share features.</li>
+        <li><strong>Revoke permissions</strong> in iOS Settings → Privacy &amp; Security.</li>
+        <li><strong>Disable reminders or App Lock</strong> in the App’s settings.</li>
+        <li><strong>Remove all App data</strong> by uninstalling the App (subject to device backups).</li>
+      </ul>
+
+      <h3>EEA, UK, and Switzerland</h3>
+      <p>
+        If you are in the European Economic Area, the United Kingdom, or Switzerland, you may
+        have the right to access, correct, delete, restrict, or object to the processing of
+        your personal data, and the right to data portability. Because the App is local-first,
+        many of these requests can be fulfilled directly in the App. You may also contact us through
+        the <strong>App Support</strong> link on the Wrenchbook App Store product page.
+      </p>
+      <p>
+        Where GDPR applies, we rely on the following legal bases: performance of a contract
+        (providing the App’s features you request), consent (for optional permissions such as
+        photos, notifications, or biometrics), and legitimate interests (security and
+        troubleshooting). You can withdraw consent at any time without affecting prior
+        processing.
+      </p>
+
+      <h3>California and other U.S. state privacy laws</h3>
+      <p>
+        We do not sell personal information, and we do not share it for cross-context behavioral
+        advertising. If you are a California resident, you may have the right to know, delete,
+        or correct personal information, and to non-discrimination for exercising those rights.
+        Because we do not maintain a server copy of your content, most requests can be handled
+        in the App. You may contact us through the <strong>App Support</strong> link on the Wrenchbook App Store product page.
+      </p>
+
+      <h3>Verification</h3>
+      <p>
+        If you contact us with a privacy request, we may ask for enough information to verify
+        that the request relates to you. We will not ask for your App content, because we do
+        not hold it.
+      </p>
+    </section>
+
+    <section class="policy" id="children">
+      <h2><span class="num">11</span> Children</h2>
+      <p>
+        The App is not directed to children under 13 (or under 16 in the EEA/UK, where
+        applicable). We do not knowingly collect personal information from children. Because
+        the App is local-first, we do not receive a child’s notes or photos.
+      </p>
+      <p>
+        If you believe a child has provided personal information to us, contact us through
+        the <strong>App Support</strong> link on the Wrenchbook App Store product page and we
+        will take appropriate steps to delete it from any systems we control.
+      </p>
+    </section>
+
+    <section class="policy" id="security">
+      <h2><span class="num">12</span> Security</h2>
+      <p>
+        We use reasonable technical measures to protect the App and its data, including
+        iOS’s app sandbox, device encryption, and optional App Lock with Face ID, Touch ID,
+        or your device passcode. No method of storage or transmission is completely secure.
+      </p>
+      <ul>
+        <li>Protect your device with a passcode and keep iOS up to date.</li>
+        <li>Use App Lock if you keep sensitive notes on a shared device.</li>
+        <li>Be careful when exporting or sharing content to third-party destinations.</li>
+      </ul>
+      <p>
+        We cannot guarantee the security of data stored on a device we do not control, or of
+        content after you choose to share it with another app or service.
+      </p>
+    </section>
+
+    <section class="policy" id="international">
+      <h2><span class="num">13</span> International users</h2>
+      <p>
+        The App stores content on your device. We do not transfer your content to a
+        developer-operated server. If you use iCloud or another backup service, your data may
+        be processed in the regions where that service operates, under that provider’s terms.
+      </p>
+      <p>
+        If you contact us, your correspondence may be processed in the country where we
+        operate. We take reasonable steps to protect it consistent with this policy.
+      </p>
+    </section>
+
+    <section class="policy" id="changes">
+      <h2><span class="num">14</span> Changes to this policy</h2>
+      <p>
+        We may update this policy to reflect changes to the App, legal requirements, or our
+        practices. The “Last updated” date at the top will change. If a change materially
+        affects how your information is handled, we will provide a prominent notice in the App
+        or on this page before the change takes effect.
+      </p>
+      <p>
+        Continued use of the App after an update means you accept the updated policy. If you do
+        not agree, you can stop using the App and uninstall it.
+      </p>
+    </section>
+
+    <section class="policy" id="contact">
+      <h2><span class="num">15</span> Contact</h2>
+      <div class="card">
+        <p><strong>Wrenchbook</strong></p>
+        <p>
+          Privacy requests and support: use the <strong>App Support</strong> link on the
+          Wrenchbook App Store product page. Please include “Privacy request” in your message
+          so we can route it correctly.
+        </p>
+        <p class="small">
+          We aim to respond to privacy requests within a reasonable period and within any
+          period required by applicable law.
+        </p>
+      </div>
+    </section>
+
+    <section class="policy" id="app-store">
+      <h2><span class="num">16</span> App Store privacy summary</h2>
+      <p>
+        The table below summarizes Wrenchbook’s current version for App Store privacy answers.
+        It should match the App Store Connect privacy questionnaire.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Current version</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data used to track you</td>
+              <td class="no">None</td>
+              <td>No cross-app or cross-site tracking; no advertising identifier.</td>
+            </tr>
+            <tr>
+              <td>Data linked to you</td>
+              <td class="no">None</td>
+              <td>No account or developer-side identity.</td>
+            </tr>
+            <tr>
+              <td>Data collected by the developer</td>
+              <td class="no">None</td>
+              <td>Content is stored on your device; we do not receive it.</td>
+            </tr>
+            <tr>
+              <td>User content</td>
+              <td class="yes">On device only</td>
+              <td>Notes, lists, tags, attachments, and selected photos.</td>
+            </tr>
+            <tr>
+              <td>Diagnostics</td>
+              <td class="no">Not collected by us</td>
+              <td>Apple may provide crash reports if you opt in to share with developers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <strong>Current App Store label.</strong> Because the App stores content on the device and
+        does not transmit it to the developer, the current version can be submitted as
+        “Data Not Collected.” If you add cloud sync, analytics, ads, purchases, or a support
+        form that receives personal data, update this table and the App Store privacy answers
+        before releasing the change.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+    <p class="small">
+      This policy is provided in English. If it is translated for convenience, the English
+      version controls to the extent permitted by law.
+    </p>
+    <p><a class="top" href="#main">Back to top ↑</a></p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© 2026 Wrenchbook. All rights reserved.</span>
+      <span>Privacy questions: App Support link on the Wrenchbook App Store page.</span>
+    </div>
+  </footer>
+</body>
+</html>
